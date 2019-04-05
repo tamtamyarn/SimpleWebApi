@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using SimpleWebApi.Data;
+using SimpleWebApi.Entities;
 
 namespace SimpleWebApi.Controllers
 {
@@ -16,10 +17,10 @@ namespace SimpleWebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Book>> Get()
         {
             var books = context.Books;
-            return Ok(books);
+            return books;
         }
     }
 }
